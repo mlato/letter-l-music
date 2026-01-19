@@ -291,3 +291,190 @@ audio {
     justify-content: center;
   }
 }
+
+/* Music Player */
+        /* --- LITE VARIABLES --- */
+        :root {
+            --bg-color: #222;
+            --player-bg: #1a1a1a;
+            --text-main: #fff;
+            --text-sub: #aaa;
+            --accent: #1DB954; /* Spotify Green */
+            --border: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.4);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-sub);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- PLAYER CONTAINER (Docked Capsule) --- */
+        #music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            font-family: var(--font-stack);
+            filter: drop-shadow(var(--shadow));
+            transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        /* Hidden State: Moves left, leaving only the toggle tab visible */
+        #music-player.hidden {
+            transform: translateX(calc(-100% + 40px)); /* Keep 40px (button width) visible */
+        }
+
+        /* --- MAIN BODY --- */
+        .player-body {
+            background: var(--player-bg);
+            border: 1px solid var(--border);
+            border-right: none; /* Merge with toggle btn */
+            border-radius: 40px 0 0 40px;
+            padding: 8px 15px 8px 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 56px;
+            box-sizing: border-box;
+        }
+
+        /* Album Art */
+        #album-art {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #000;
+            border: 1px solid #333;
+            flex-shrink: 0;
+        }
+
+        /* Track Info */
+        .track-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 120px;
+            line-height: 1.2;
+        }
+
+        #track-title {
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #track-artist {
+            font-size: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* --- CONTROLS --- */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 5px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            cursor: pointer;
+            padding: 0;
+            width: 30px; height: 30px;
+            font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: color 0.2s, transform 0.1s;
+        }
+        button:hover { color: var(--text-main); }
+        button:active { transform: scale(0.95); }
+        
+        #btn-play {
+            color: var(--text-main);
+            font-size: 1rem;
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            border: 1px solid transparent;
+        }
+        #btn-play:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        /* Volume Slider (Compact) */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+            width: 50px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 3px;
+            background: #444;
+            border-radius: 2px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 10px; width: 10px;
+            border-radius: 50%;
+            background: var(--text-main);
+            margin-top: -3.5px;
+        }
+
+        /* --- TOGGLE BUTTON (The "Tab") --- */
+        #toggle-btn {
+            background: var(--player-bg);
+            border: 1px solid var(--border);
+            border-left: none; /* Merge with body */
+            border-radius: 0 40px 40px 0;
+            height: 56px;
+            width: 40px; /* Visible width when hidden */
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem;
+            padding-right: 2px;
+            color: var(--accent);
+        }
+        #toggle-btn:hover { background: rgba(255,255,255,0.05); }
+
+        /* --- PLAYLIST MODAL (Simple List) --- */
+        #playlist-modal {
+            position: absolute;
+            bottom: 70px; left: 0;
+            width: 260px;
+            background: var(--player-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 5px 0;
+            display: none;
+            box-shadow: var(--shadow);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        #playlist-modal.show { display: block; }
+
+        .p-item {
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            transition: background 0.2s;
+        }
