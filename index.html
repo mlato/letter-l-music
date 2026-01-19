@@ -22,7 +22,7 @@ title: Home
           <p>{{ track.title }}</p>
         </div>
         <audio controls>
-          <source src="{{ track.file }}" type="audio/mpeg">
+          <source src="{{ site.data.tracks.track.file | relative_url }}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
