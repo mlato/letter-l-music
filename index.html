@@ -19,8 +19,7 @@ title: Home
       {% for track in site.data.tracks %}
       <div class="track">
         <div class="track-info">
-          <h3>{{ track.title }}</h3>
-          <p>{{ track.artist }}</p>
+          <p>{{ track.title }}</p>
         </div>
         <audio controls>
           <source src="{{ track.file }}" type="audio/mpeg">
