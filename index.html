@@ -16,17 +16,15 @@ title: Home
   <h1>Listen</h1>
   <div class="sketch-box">    
     <div class="music-player">
-      {% for track in site.data.tracks %}
       <div class="track">
         <div class="track-info">
-          <p>{{ track.title }}</p>
+          <p>vacation (demo)</p>
         </div>
         <audio controls>
-          <source src="{{ site.data.tracks.track.file | relative_url }}" type="audio/mpeg">
+          <source src="/assets/music/vacation_2.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
