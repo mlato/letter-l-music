@@ -5,8 +5,3 @@ url: "https://mlato.github.io/"
 
 # Build settings
 theme: jekyll-theme-minimal
-
-# Collections
-collections:
-  music:
-    output: false
