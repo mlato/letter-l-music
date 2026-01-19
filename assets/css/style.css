@@ -3,7 +3,7 @@
 :root {
   --navy: #0A192F;
   --purple: #BF40BF;
-  --cream: #F5F5DC;
+  --beige: #F1E9D2;
   --gray: #8892B0;
 }
 
@@ -14,9 +14,9 @@
 }
 
 body {
-  font-family: 'Courier New', monospace;
-  background-color: var(--cream);
-  color: var(--navy);
+  font-family: 'Spectral', monospace;
+  background-color: var(--navy);
+  color: var(--beige);
   line-height: 1.6;
 }
 
@@ -48,22 +48,6 @@ body {
   letter-spacing: 1px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--cream);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.nav-links a:hover {
-  border-bottom-color: var(--purple);
-}
-
 /* Main Container */
 .container {
   max-width: 900px;
@@ -76,8 +60,9 @@ body {
   margin-bottom: 4rem;
 }
 
-.section h2 {
+.section h1 {
   font-size: 2rem;
+  font-family: 'Big Shoulders';
   color: var(--navy);
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--purple);
@@ -85,11 +70,10 @@ body {
   display: inline-block;
 }
 
-/* Sketch Box - Field Journal Style */
+/* Sketch Box */
 .sketch-box {
-  background: white;
+  background: var(--beige);
   padding: 2rem;
-  border: 2px dashed var(--navy);
   position: relative;
   margin-bottom: 1rem;
 }
@@ -101,25 +85,11 @@ body {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px solid var(--gray);
   pointer-events: none;
 }
 
 .sketch-box p {
   margin-bottom: 1rem;
-}
-
-.note {
-  font-style: italic;
-  color: var(--gray);
-  font-size: 0.9rem;
-}
-
-code {
-  background: var(--cream);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Courier New', monospace;
 }
 
 /* Music Player */
@@ -128,7 +98,7 @@ code {
 }
 
 .track {
-  background: var(--cream);
+  background: var(--beige);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-left: 4px solid var(--purple);
@@ -229,7 +199,7 @@ audio {
 /* Footer */
 .footer {
   background: var(--navy);
-  color: var(--cream);
+  color: var(--beige);
   padding: 2rem;
   border-top: 2px solid var(--purple);
 }
@@ -248,7 +218,7 @@ audio {
 }
 
 .footer-links a {
-  color: var(--cream);
+  color: var(--beige);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
