@@ -1,11 +1,10 @@
 title: Matt Latourelle Music
 description: Official music site
 baseurl: ""
-url: "https://yourusername.github.io"
+url: "https://mlato.github.io/"
 
 # Build settings
-markdown: kramdown
-theme: minima
+theme: jekyll-theme-minimal
 
 # Collections
 collections:
