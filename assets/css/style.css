@@ -16,7 +16,6 @@
 body {
   font-family: 'Spectral', monospace;
   background-color: var(--navy);
-  color: var(--beige);
   line-height: 1.6;
 }
 
@@ -63,7 +62,7 @@ body {
 .section h1 {
   font-size: 2rem;
   font-family: 'Big Shoulders';
-  color: var(--navy);
+  color: var(--purple);
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--purple);
   padding-bottom: 0.5rem;
@@ -90,6 +89,8 @@ body {
 
 .sketch-box p {
   margin-bottom: 1rem;
+  font-family: 'Spectral', monospace;
+  color: var(--navy);
 }
 
 /* Music Player */
