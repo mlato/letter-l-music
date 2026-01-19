@@ -1,0 +1,56 @@
+---
+layout: default
+title: Home
+---
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <div class="sketch-box">
+    <p>BIO TBD</p>
+  </div>
+</section>
+
+<section id="stream" class="section">
+  <h2>Stream</h2>
+  <div class="sketch-box">
+    <p class="note">Upload your MP3 files to the <code>assets/music/</code> folder and update the playlist below.</p>
+    
+    <div class="music-player">
+      {% for track in site.data.tracks %}
+      <div class="track">
+        <div class="track-info">
+          <h3>{{ track.title }}</h3>
+          <p>{{ track.artist }}</p>
+        </div>
+        <audio controls preload="metadata">
+          <source src="{{ track.file }}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="{{ track.file }}" download class="download-btn">Download</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="links" class="section">
+  <h2>Links</h2>
+  <div class="sketch-box">
+    <div class="email-signup">
+      <h3>Join the Mailing List</h3>
+      <form class="signup-form">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="note">TBD</p>
+    </div>
+    
+    <div class="social-links">
+      <h3>Connect</h3>
+      <ul>
+        <li><a href="https://spotify.com" target="_blank">Spotify</a></li>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
