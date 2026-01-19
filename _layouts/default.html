@@ -26,5 +26,38 @@
     </div>
   </footer>
 
+      <div id="music-player">
+        
+        <!-- Main Player Body -->
+        <div class="player-body">
+            <img id="album-art" src="" alt="Art">
+            
+            <div class="track-info">
+                <div id="track-title">Loading...</div>
+                <div id="track-artist">...</div>
+            </div>
+
+            <div class="controls">
+                <button id="btn-prev" title="Previous"><i class="fas fa-backward"></i></button>
+                <button id="btn-play" title="Play/Pause"><i class="fas fa-play"></i></button>
+                <button id="btn-next" title="Next"><i class="fas fa-forward"></i></button>
+                <button id="btn-list" title="Playlist"><i class="fas fa-list"></i></button>
+                <input type="range" id="vol-slider" min="0" max="1" step="0.1" value="0.5" title="Volume">
+            </div>
+        </div>
+
+        <!-- Toggle Tab (Chevron updates dynamically) -->
+        <button id="toggle-btn" title="Toggle Player">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Playlist Popup -->
+        <div id="playlist-modal">
+            <div id="playlist-list"></div>
+        </div>
+
+    </div>
+
+    <audio id="audio-el" crossOrigin="anonymous"></audio>
 </body>
 </html>
