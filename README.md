@@ -48,10 +48,10 @@ To add new tracks, edit `_data/tracks.yml`:
   file: "/assets/music/your-song.mp3"
 ```
 
-##email integration
+## email integration
 
 Replace the form in `index.html` with your email service provider's embed code (Mailchimp, Buttondown, ConvertKit, etc.)
 
-##license
+## license
 
 © Matt Latourelle. All rights reserved.
