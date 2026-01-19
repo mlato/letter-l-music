@@ -478,3 +478,12 @@ audio {
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
             transition: background 0.2s;
         }
+              .p-item:hover { background: rgba(255,255,255,0.1); }
+        .p-item.active { color: var(--accent); font-weight: bold; background: rgba(29, 185, 84, 0.1); }
+        .p-item:last-child { border-bottom: none; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            #music-player { left: 10px; bottom: 10px; }
+            #vol-slider { display: none; }
+        }
